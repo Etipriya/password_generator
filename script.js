@@ -13,8 +13,18 @@ let numericArray;
 let specialChar;
 
 // Declare a new array to contain the character
-const chosenCharArray [];
+const chosenCharArray = [];
+console.log (chosenCharArray);
 
+// Password length using prompt and changing the string to number
+const passwordNum = () => {
+  const passwordLength = prompt(
+    "How long would you want your password to be?"
+  );
+  console.log(passwordLength);
+  const passwordLengthNum = parseInt(passwordLength,10);
+  console.log(passwordLengthNum);
+}
 //
 function generatePassword() {
 	// Create a variable to store our generated password
