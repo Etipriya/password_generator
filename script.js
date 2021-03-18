@@ -17,14 +17,21 @@ const chosenCharArray = []
 //console.log (chosenCharArray);
 
 // Password length using prompt and changing the string to number
-const passwordNumber = () => {
-  const passwordLength = prompt(
-    "How long would you want your password to be?"
-  );
+//const passwordNumber = () => {
+ // const passwordLength = prompt(
+ //   "How long would you want your password to be?"
+ // );
+  //console.log(passwordLength);
+  //const passwordLengthNumber = parseInt(passwordLength,10);
+  //console.log(passwordLengthNumber);
+//}
+
+// Created generate password variable
+const generatePassword = function(){
+  let passwordLength = prompt("What is the length of your password");
   console.log(passwordLength);
-  const passwordLengthNumber = parseInt(passwordLength,10);
-  console.log(passwordLengthNumber);
 }
+
 // Validation for length of the password 
 if(passwordLengthNumber >= 8 && passwordLengthNumber <= 128){
   const isLowerCase = confirm("Does your Password includes lower characters?");
@@ -53,10 +60,7 @@ if(isLowerCase){
   chosenCharArray.push(specialChar);
 }
 
-// Created generate password variable
-const generatePassword = function(){
 
-}
 function generatePassword() {
 	// Create a variable to store our generated password
 	var password = ''
