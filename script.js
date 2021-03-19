@@ -67,7 +67,7 @@ let isNumberChar;
 let isSpecialChar;
 
 // Created password variable
-const generatePassword = function () {
+function generatePassword() {
   const passwordLength = prompt("What is the length of your password");
   //console.log(passwordLength);
   const passwordLengthNumber = parseInt(passwordLength, 10);
@@ -78,16 +78,9 @@ const generatePassword = function () {
   // Validation for length of the password
   if (passwordLengthNumber >= 8 && passwordLengthNumber <= 128) {
     isLowerCase = confirm("Does your Password includes lower characters?");
-    console.log(isLowerCase);
-
     isUpperCase = confirm("Does your Password includes upper characters?");
-    console.log(isUpperCase);
-
     isNumberChar = confirm("Does your Password includes numbers?");
-    console.log(isNumberChar);
-
     isSpecialChar = confirm("Does your Password includes special characters?");
-    console.log(isSpecialChar);
 
     // Add validation function for character using chose
     if (isLowerCase) {
@@ -107,12 +100,13 @@ const generatePassword = function () {
     } else {
       alert("Your password should contain characters from 8 to 128");
     }
-    const optionsArray = [[lowerCaseArray], [specialChar]];
-    if (isLowerCase) {
-      optionsArray.push(lowerCaseArray);
-    } else {
-      optionsArray.push(specialChar);
-    }
+
+    //const optionsArray = [[lowerCaseArray], [specialChar]];
+    //if (isLowerCase) {
+    //optionsArray.push(lowerCaseArray);
+    //} else {
+    //optionsArray.push(specialChar);
+    //}
 
     for (let i = 0; i < passwordLengthNumber; i++) {
       let randomArray =
@@ -120,15 +114,17 @@ const generatePassword = function () {
 
       let randomCharacter =
         randomArray[Math.floor(Math.random() * randomArray.length)];
-      console.log(randomArray);
-      console.log(randomCharacter);
+      //console.log(randomArray);
+      //console.log(randomCharacter);
       passwordArray.push(randomCharacter);
     }
     console.log(passwordArray);
+    //Create a variable to store our generated password
+    const password = passwordArray.join("");
 
-    return passwordArray.join("");
+    return password;
   }
-};
+}
 
 // Write password to the #password input
 //function writePassword() {
