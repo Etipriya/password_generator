@@ -69,9 +69,9 @@ let isSpecialChar;
 // Created generate password variable
 const generatePassword = function () {
   const passwordLength = prompt("What is the length of your password");
-  console.log(passwordLength);
+  //console.log(passwordLength);
   const passwordLengthNumber = parseInt(passwordLength, 10);
-  console.log(passwordLengthNumber);
+  //console.log(passwordLengthNumber);
   // Declare a new array to contain the character
   const chosenCharArray = [];
 
@@ -105,19 +105,31 @@ const generatePassword = function () {
     if (!isLowerCase && !isUpperCase && !isNumberChar && !isSpecialChar) {
       alert("Select one type of character");
     }
-    console.log(chosenCharArray);
+    //console.log(chosenCharArray);
+    for (let i = 0; i < passwordLengthNumber; i++) {
+      let randomArray =
+        chosenCharArray[Math.floor(Math.random() * chosenCharArray.length)];
+
+      let randomCharacter =
+        randomArray[Math.floor(Math.random() * randomArray.length)];
+      console.log(randomArray);
+      console.log(randomCharacter);
+      passwordArray.push(randomCharacter);
+    }
+    console.log(passwordArray);
+
+    return passwordArray.join("");
   } else {
     alert("Your password should contain characters from 8 to 128");
   }
 };
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+//function writePassword() {
+//const password = generatePassword();
+//var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-}
-
+//passwordText.value = password;
+//}
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+//generateBtn.addEventListener("click", writePassword);
