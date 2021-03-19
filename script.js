@@ -66,7 +66,7 @@ let isUpperCase;
 let isNumberChar;
 let isSpecialChar;
 
-// Created generate password variable
+// Created password variable
 const generatePassword = function () {
   const passwordLength = prompt("What is the length of your password");
   //console.log(passwordLength);
@@ -104,8 +104,16 @@ const generatePassword = function () {
     }
     if (!isLowerCase && !isUpperCase && !isNumberChar && !isSpecialChar) {
       alert("Select one type of character");
+    } else {
+      alert("Your password should contain characters from 8 to 128");
     }
-    //console.log(chosenCharArray);
+    const optionsArray = [[lowerCaseArray], [specialChar]];
+    if (isLowerCase) {
+      optionsArray.push(lowerCaseArray);
+    } else {
+      optionsArray.push(specialChar);
+    }
+
     for (let i = 0; i < passwordLengthNumber; i++) {
       let randomArray =
         chosenCharArray[Math.floor(Math.random() * chosenCharArray.length)];
@@ -119,8 +127,6 @@ const generatePassword = function () {
     console.log(passwordArray);
 
     return passwordArray.join("");
-  } else {
-    alert("Your password should contain characters from 8 to 128");
   }
 };
 
