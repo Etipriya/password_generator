@@ -61,13 +61,14 @@ const upperCaseArray = [
 const numberArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const specialChar = ["!", "@", "$", "%", "&", "+"];
 
-let isLowerCase;
-let isUpperCase;
-let isNumberChar;
-let isSpecialChar;
-
 // Created password variable
+
 function generatePassword() {
+  let isLowerCase;
+  let isUpperCase;
+  let isNumberChar;
+  let isSpecialChar;
+  const passwordArray = [];
   const passwordLength = prompt("What is the length of your password");
   //console.log(passwordLength);
   const passwordLengthNumber = parseInt(passwordLength, 10);
@@ -97,8 +98,6 @@ function generatePassword() {
     }
     if (!isLowerCase && !isUpperCase && !isNumberChar && !isSpecialChar) {
       alert("Select one type of character");
-    } else {
-      alert("Your password should contain characters from 8 to 128");
     }
 
     //const optionsArray = [[lowerCaseArray], [specialChar]];
@@ -123,15 +122,17 @@ function generatePassword() {
     const password = passwordArray.join("");
 
     return password;
+  } else {
+    alert("Your password should contain characters from 8 to 128");
   }
 }
 
-// Write password to the #password input
-//function writePassword() {
-//const password = generatePassword();
-//var passwordText = document.querySelector("#password");
+//Write password to the #password input
+function writePassword() {
+  const password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-//passwordText.value = password;
-//}
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
+  passwordText.value = password;
+}
+//Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
