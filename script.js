@@ -70,9 +70,9 @@ function generatePassword() {
   let isSpecialChar;
   const passwordArray = [];
   const passwordLength = prompt("What is the length of your password");
-  //console.log(passwordLength);
+
   const passwordLengthNumber = parseInt(passwordLength, 10);
-  //console.log(passwordLengthNumber);
+
   // Declare a new array to contain the character
   const chosenCharArray = [];
 
@@ -100,21 +100,13 @@ function generatePassword() {
       alert("Select one type of character");
     }
 
-    //const optionsArray = [[lowerCaseArray], [specialChar]];
-    //if (isLowerCase) {
-    //optionsArray.push(lowerCaseArray);
-    //} else {
-    //optionsArray.push(specialChar);
-    //}
-
     for (let i = 0; i < passwordLengthNumber; i++) {
       let randomArray =
         chosenCharArray[Math.floor(Math.random() * chosenCharArray.length)];
 
       let randomCharacter =
         randomArray[Math.floor(Math.random() * randomArray.length)];
-      //console.log(randomArray);
-      //console.log(randomCharacter);
+
       passwordArray.push(randomCharacter);
     }
     console.log(passwordArray);
