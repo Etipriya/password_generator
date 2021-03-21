@@ -7,6 +7,10 @@ your browser. Features include:
 - Generated Passwords are impossible to predict or manipulate.
 - Different options to control how passwords are generated, including number of digits, number of symbols.
 
+## Project Link
+
+https://github.com/Etipriya/password_generator
+
 ## Steps to write Javascript
 
 - Write an Assignment code.
@@ -21,6 +25,8 @@ your browser. Features include:
 
 ## Screenshots
 
-![image](.\assets\images\screencapture.png)
+![image](/assets/images/screencapture.png)
 
 ## Link to the deployed application
+
+https://github.com/Etipriya/password_generator
