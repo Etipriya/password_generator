@@ -109,7 +109,7 @@ function generatePassword() {
 
       passwordArray.push(randomCharacter);
     }
-    console.log(passwordArray);
+    //console.log(passwordArray);
     //Create a variable to store our generated password
     const password = passwordArray.join("");
 
